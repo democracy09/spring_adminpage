@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-
+    User findFirstByPhoneNumberOrderByIdDesc(String phoneNumber);   // id 역순으로 폰번호 첫번째 저장부터
 
 }

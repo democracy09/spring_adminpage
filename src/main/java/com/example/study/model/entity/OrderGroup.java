@@ -31,9 +31,14 @@ public class OrderGroup {
     private LocalDateTime orderAt;
     private LocalDateTime arrivalDate;
     private LocalDateTime createdAt;
-    private String createBy;
+    private String createdBy;
     private LocalDateTime updatedAt;
     private String updatedBy;
+
+
+
+    private Long userId;
+
 
 
 }
