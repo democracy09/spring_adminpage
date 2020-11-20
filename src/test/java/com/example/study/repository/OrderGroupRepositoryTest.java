@@ -21,6 +21,7 @@ public class OrderGroupRepositoryTest extends StudyApplicationTests {
         orderGroup.setStatus("COMPLETED");
         orderGroup.setOrderType("ALL");
         orderGroup.setRevName("홍길동");
+        orderGroup.setRevAddress("서울시 강남구");
         orderGroup.setPaymentType("CARD");
         orderGroup.setTotalPrice(BigDecimal.valueOf(900000));
         orderGroup.setTotalQuantity(1);
@@ -28,7 +29,7 @@ public class OrderGroupRepositoryTest extends StudyApplicationTests {
         orderGroup.setArrivalDate(LocalDateTime.now());
         orderGroup.setCreatedAt(LocalDateTime.now());
         orderGroup.setCreatedBy("AdminServer");
-        orderGroup.setUserId(1L);
+//        orderGroup.setUserId(1L);
 
         OrderGroup newOrderGroup = orderGroupRepository.save(orderGroup);
         Assertions.assertNotNull(newOrderGroup);
