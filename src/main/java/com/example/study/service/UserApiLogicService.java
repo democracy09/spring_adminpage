@@ -84,16 +84,13 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
         // 1. id -> repository : user
         Optional<User> optional = userRepository.findById(id);
 
-
         // 2. repository -> delete
-
+        // 3. response return
         return optional.map(user->{
             userRepository.delete(user);
             return Header.OK();
         })
                 .orElseGet(()->Header.ERROR("데이터 없음"));
-
-        // 3. response return
 
     }
 

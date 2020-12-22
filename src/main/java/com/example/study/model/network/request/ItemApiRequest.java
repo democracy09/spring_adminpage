@@ -1,4 +1,4 @@
-package com.example.study.model.network.response;
+package com.example.study.model.network.request;
 
 
 import lombok.AllArgsConstructor;
@@ -6,28 +6,33 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UserApiResponse {
+public class ItemApiRequest {
 
     private Long id;
 
-    private String account;
-
-    private String password;
-
     private String status;
 
-    private String email;
+    private String name;
 
-    private String phoneNumber;
+    private String title;
+
+    private String content;
+
+    private BigDecimal price;
+
+    private String BrandName;
 
     private LocalDateTime registeredAt;
 
     private LocalDateTime unregisteredAt;
+
+    private Long partnerId;
 
 }
