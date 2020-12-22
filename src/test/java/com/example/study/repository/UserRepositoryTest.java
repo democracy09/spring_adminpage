@@ -22,11 +22,11 @@ public class UserRepositoryTest extends StudyApplicationTests {
     @Test
     public void create(){
 
-        String account = "Test01";
-        String password = "Test01";
+        String account = "Test03";
+        String password = "Test03";
         String status = "REGISTERED";
-        String email = "Test01@gmail.com";
-        String phoneNumber = "010-1111-2222";
+        String email = "Test03@gmail.com";
+        String phoneNumber = "010-1111-3333";
         LocalDateTime registeredAt = LocalDateTime.now();
         LocalDateTime createdAt = LocalDateTime.now();
         String createdBy = "AdminServer";
@@ -38,8 +38,9 @@ public class UserRepositoryTest extends StudyApplicationTests {
         user.setEmail(email);
         user.setPhoneNumber(phoneNumber);
         user.setRegisteredAt(registeredAt);
-        user.setCreatedAt(createdAt);
-        user.setCreatedBy(createdBy);
+
+        //Lombok
+        User u = User.builder().account(account).password(password).status(status).email(email).build();
 
         User newUser = userRepository.save(user);
 
@@ -53,13 +54,14 @@ public class UserRepositoryTest extends StudyApplicationTests {
 
         User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1111-2222");
 
+
         user.getOrderGroupList().stream().forEach(orderGroup -> {
 
             System.out.println("-------------------------장바구니-------------------------");
             System.out.println("수령인 : "+orderGroup.getRevName());
             System.out.println("수령지 : "+orderGroup.getRevAddress());
             System.out.println("총 금액 : "+orderGroup.getTotalPrice());
-            System.out.println("총 수량 " + orderGroup.getTotalQuantity());
+            System.out.println("총 수량 : " + orderGroup.getTotalQuantity());
 
             System.out.println("-------------------------주문상세-------------------------");
             orderGroup.getOrderDetailList().forEach(orderDetail -> {
