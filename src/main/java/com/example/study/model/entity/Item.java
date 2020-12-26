@@ -1,5 +1,6 @@
 package com.example.study.model.entity;
 
+import com.example.study.model.enumclass.ItemStatus;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
@@ -9,6 +10,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -27,10 +29,12 @@ public class Item {
     private Long id;
 
     private String name;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private ItemStatus status;
     private String title;
     private String content;
-    private Integer price;
+    private BigDecimal price;
     private String brandName;
     private LocalDateTime registeredAt;
     private LocalDateTime unregisteredAt;

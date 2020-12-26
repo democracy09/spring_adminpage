@@ -1,5 +1,6 @@
 package com.example.study.model.entity;
 
+import com.example.study.model.enumclass.PartnerStatus;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.apache.tomcat.jni.Local;
@@ -28,7 +29,9 @@ public class Partner {
     private Long id;
 
     private String name;
+
     private String status;
+
     private String address;
     private String callCenter;
     private String partnerNumber;
